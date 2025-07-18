@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>
+            PAIAP - Plagiarism and Artificial Intelligence Awareness Program
+        </title>
+        <style>
+            body {
+                background-color: #2E8E9F;
+                color: white;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+            h1{
+                text-align: center;
+                font-size: 35px;
+                margin-top: 60px;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+            button {
+                font-size: 45px;
+                border: 5px solid white;
+                background-color: #2E8E9F;
+                color: white;
+                padding: 10px 24px;
+            }
+            .main {
+                margin-left: 43%;
+                margin-right: 35%;
+            }
+            .show-ai {
+                margin-left: 12%;
+            }
+            .submit4 {
+                margin-left: 27%;
+            }
+            input{
+                padding:8px;
+                border: 5px solid white;
+                background-color: #2E8E9F;
+                color: white;
+                width:25%;
+                font-size: 35px;
+                margin-left: 36%;
+                margin-right: 35%;
+            }
+            input::placeholder{
+                color: #ffffffbe;
+            }
+            input, button{
+                margin-top : 20px;
+            }
+            .box1, .box2 { 
+                border: 5px solid white;
+                text-align: center;
+                width: 30%;
+                font-size: 25px;
+                margin-left: 16%;
+            }
+            textarea{
+                height:180px;
+                width: 75%;
+                margin-left: 12%;
+                background-color: #2E8E9F;
+                font-size: 35px;
+                padding:8px;
+                border: 5px solid white;
+            }
+            textarea::placeholder, textarea:focus{
+                color: white;
+            }
+        </style>
+        <script>
+            const loginDiv = document.getElementsByClassName("login");
+            const defDiv = document.getElementsByClassName("def");
+            const popDiv = document.getElementsByClassName("pop");
+            const quest1Div = document.getElementsByClassName("quest1");
+            const quest2Div = document.getElementsByClassName("quest2");
+            const consDiv = document.getElementsByClassName("cons");
+            const caughtDiv = document.getElementsByClassName("caught");
+            const simDiv = document.getElementsByClassName("sim");
+            const introchatDiv = document.getElementsByClassName("introchat");
+            const chatDiv = document.getElementsByClassName("chat");
+            function init(){
+                loginDiv[0].style.display = "block" ;
+                defDiv[0].style.display = "none" ;
+                popDiv[0].style.display = "none" ;
+                quest1Div[0].style.display = "none" ;
+                quest2Div[0].style.display = "none" ;
+                consDiv[0].style.display = "none" ;
+                caughtDiv[0].style.display = "none" ;
+                simDiv[0].style.display = "none" ;
+                introchatDiv[0].style.display = "none" ;
+                chatDiv[0].style.display = "none" ;
+            }
+            function nextPop(){
+                defDiv[0].style.display = "none" ;
+                popDiv[0].style.display = "block" ;
+            }
+            function nextq1(){
+                popDiv[0].style.display = "none" ;
+                quest1Div[0].style.display = "block" ;
+            }
+            function nextq2(){
+                quest1Div[0].style.display = "none" ;
+                quest2Div[0].style.display = "block" ;
+            }
+            function nextcon(){
+                quest2Div[0].style.display = "none" ;
+                consDiv[0].style.display = "block" ;
+            }
+            function nextcau(){
+                consDiv[0].style.display = "none" ;
+                caughtDiv[0].style.display = "block" ;
+            }
+            function nextsim(){
+                caughtDiv[0].style.display = "none" ;
+                simDiv[0].style.display = "block" ;
+            }
+            function nextintro(){
+                simDiv[0].style.display = "none" ;
+                introchatDiv[0].style.display = "block" ;
+            }
+            function nextgpt(){
+                introchatDiv[0].style.display = "none" ;
+                chatDiv[0].style.display = "block" ;
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <div class="login">
+            <h1>Welcome To PAIAP</h1>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Code">
+            <div class="main"><button type="button" class="start1">Start</button></div>
+        </div>
+        <div class="def">
+            <h1>“Plagiarism is presenting someone else's idea as if it were your own, whether you mean to or not.” (Ma et al.)</h1>
+            <div class="main"><button type="button" class="next2" onclick="nextPop()">Next</button></div>
+        </div>
+        <div class="pop">
+            <h1 style="font-size: 60px;">Pop Quiz</h1>
+            <div class="main"><button type="button" class="next3" onclick="nextq1()">Next</button></div>
+        </div>
+        <div class="quest1">
+            <h1>Name four most popular programing languages?</h1>
+            <textarea placeholder="Please write your Answer here."></textarea>
+            <button type="submit" class="show-ai">Show AI Answers</button>
+            <button type="submit" class="submit4" onclick="nextq2()">Submit</button>
+        </div>
+        <div class="quest2">
+            <h1>Name one differences between programing languages?</h1>
+            <textarea placeholder="Please write your Answer here."></textarea>
+            <div class="main"><button type="submit" class="submit5" onclick="nextcon()">Submit</button></div>
+        </div>
+        <div class="cons">
+            <h1>Explaination of conseqences</h1>
+            <p>The first question represented the exam you took to graduate where you had opportunity cheat. However, once you made your way into the workforce, the question you had to answer to work efficiently for your boss was represented as the second question. In which you couldn’t cheat and lead to failure. </p>
+            <div class="main"><button type="button" class="next6" onclick="nextcau()">Next</button></div>
+        </div>
+        <div class="caught">
+            <h1>Being Caught</h1>
+            <div class="main"><button type="button" class="next7" onclick="nextsim()">Next</button></div>
+        </div>
+        <div class="sim">
+            <h1>Which paragraph is from human? pick one.</h1>
+            <div style="width: 100%; overflow: hidden;">
+                <div class="box1" style="float: left;"><p>Through the internet, many vulnerabilities like cybersecurity threats have been created. However, it also made every available.</p></div>
+                <div class="box2" style="margin-left: 52%; padding-right:15px; padding-left:15px;"><p>Technology changed our lives. The internet made everything accessible, but also poses challenges like privacy and cyber threats.</p></div>
+            </div>    
+            <div class="main"><button type="submit" class="submit8" onclick="nextintro()">Submit</button></div>
+        </div>
+        <div class="introchat">
+            <h1>Here we have one of hundreds of tools that can help us figure it out!</h1>
+            <h1>CHATGPT</h1>
+            <div class="main"><button type="button" class="next9" onclick="nextgpt()">Next</button></div>
+        </div>
+        <div class="chat">
+            <h1>hello</h1>
+            <iframe src="https://gptzero.me/" title="W3Schools Free Online Web Tutorials"></iframe>
+            <div class="main"><button type="button" class="next10">Next</button></div>
+        </div>
+        <script>
+            document.querySelector(".login button").onclick = function () {
+                let all_in = true
+                document.querySelectorAll(".login input").forEach(function(e) {
+                    if (e.value == "") all_in = false
+                })
+                if(!all_in) {
+                    alert("Please, fill in all inputs."); return;
+                }
+                alert("Hello " + document.querySelector(".login input").value + ",\nThis assignment is based on completion grade.")
+                loginDiv[0].style.display = "none" ;
+                defDiv[0].style.display = "block" ;
+            }
+            document.querySelector(".quest1 .show-ai").onclick = function () {
+                document.querySelector(".quest1 textarea").innerHTML = `
+                    1. JavaScript
+                    2. Python
+                    3. C++
+                    4. Java
+                `.replace("\n", "").replace(/  /g, "")
+            }
+            // get the div element
+            const blox = document.querySelector('.box1');
+            const boxd = document.querySelector('.box2');
+
+            // add a click event listener to the div
+            blox.addEventListener('click', function() {
+              // specify the action to take when the div is clicked
+              console.log('incorrect');
+              blox.style.background = "white" ;
+              blox.style.color = "#2E8E9F" ;
+              boxd.style.color = "white" ;
+              boxd.style.background = "#2E8E9F" ;
+            });
+
+            boxd.addEventListener('click', function() {
+              // specify the action to take when the div is clicked
+              console.log('correct');
+              boxd.style.background = "white" ;
+              boxd.style.color = "#2E8E9F" ;
+              blox.style.color = "white" ;
+              blox.style.background = "#2E8E9F" ;
+            });
+        </script>
+    </body>
+</html>
